@@ -22,9 +22,10 @@ public class DANI extends PApplet {
 	public void setup() {
 		colorMode(HSB);
 		loadFile();
-		for (String word : words) {
-			System.out.println(word); // Print each word in the list
-		}
+		// for (String word : words) {
+		// 	System.out.println(word); // Print each word in the list
+		// }
+		printModel();
        
 	}
 
@@ -47,28 +48,30 @@ public class DANI extends PApplet {
 	
     public void loadFile() {
 		String[] lines = loadStrings("small.txt");
-		for (String line : lines) {
-			String[] words = split(line, ' ');
-			for (String word : words) 
+		for (String l : lines) {
+			String[] words = split(l, ' ');
+			for (String w : words) 
 			{
-				word = word.replaceAll("[^\\w\\s]","");
-				word = word.toLowerCase();
-				this.words.add(word);
+				w = w.replaceAll("[^\\w\\s]","");
+				w = w.toLowerCase();
+				this.words.add(w);
 			}
 		}
 
     }
 
     public boolean findWord(String str) {
-		for (String word : words) {
-			if (word.equals(str)) {
+		for (String w : words) {
+			if (w.equals(str)) {
 				return true;
 			}
 		}
        return false;
     }
 
-
+	public void printModel(){
+    	System.out.println("Word Count: " + words.size());
+	}
 
 }
 

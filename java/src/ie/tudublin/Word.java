@@ -6,7 +6,7 @@ import java.util.Arrays;
 import processing.core.PApplet;
 
 public class Word extends PApplet{
-    
+
     //field for the word (a String) and an ArrayList of type Follow as fields
     private String word;
     private ArrayList<Follow> follows = new ArrayList<Follow>();
