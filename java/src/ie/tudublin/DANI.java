@@ -1,12 +1,9 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
-
 import processing.core.PApplet;
 
 public class DANI extends PApplet {
-
-	
 
 	public void settings() {
 		size(1000, 1000);
@@ -40,5 +37,16 @@ public class DANI extends PApplet {
 		textSize(20);
         textAlign(CENTER, CENTER);
         
+	}
+
+	public void loadFile() {
+		String[] w = loadStrings("samll.txt");
+
+		for(){
+
+		}
+
+
+
 	}
 }
