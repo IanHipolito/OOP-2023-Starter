@@ -5,10 +5,7 @@ import processing.core.PApplet;
 
 public class DANI extends PApplet {
 
-	String[] s;
-	String[] w;
-	String[] line;
-
+	ArrayList<String> words = new ArrayList<String>();
 
 	public void settings() {
 		size(1000, 1000);
@@ -24,7 +21,10 @@ public class DANI extends PApplet {
 
 	public void setup() {
 		colorMode(HSB);
-
+		loadFile();
+		for (String word : words) {
+			System.out.println(word); // Print each word in the list
+		}
        
 	}
 
@@ -44,51 +44,25 @@ public class DANI extends PApplet {
         
 	}
 
-	public void loadFile() {
-		s = loadStrings("small.txt");
-
-		for(int i = 0 ; i < s.length ; i ++)
-		{
-			//split the string into an array of words
-			w = w[i].split(line[i], ' ');
-			
-			//remove punctuation characters
-			w[i] = w[i].replaceAll("[^\\w\\s]","");
-
-			//convert to lower case
-			w[i] = w[i].toLowerCase();
-
-			//print the contents of the file
-			System.out.println(s[i]);
+	
+    public void loadFile() {
+		String[] lines = loadStrings("small.txt");
+		for (String line : lines) {
+			String[] words = split(line, ' ');
+			for (String word : words) 
+			{
+				word = word.replaceAll("[^\\w\\s]","");
+				word = word.toLowerCase();
+				this.words.add(word);
+			}
 		}
 
-		// for(int i = 0 ; i < w.length ; i ++)
-		// {
-		// 	//remove punctuation characters
-		// 	w[i] = w[i].replaceAll("[^\\w\\s]","");
-		// }
+    }
 
-		// for(int i = 0 ; i < w.length ; i ++)
-		// {
-		// 	//convert to lower case
-		// 	w[i] = w[i].toLowerCase();
-		// }
+    public boolean findWord(String str) {
+       return false;
+    }
 
-		// for(int i = 0 ; i < w.length ; i ++)
-		// {
-		// 	//print the contents of the file
-		// 	System.out.println(w[i]);
-		// }
-		
-	}
-
-	public void findWord(str){
-
-	}
-
-	public void findFollows(str){
-
-	}
 
 
 }
