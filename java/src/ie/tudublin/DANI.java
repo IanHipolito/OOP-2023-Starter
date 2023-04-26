@@ -60,6 +60,11 @@ public class DANI extends PApplet {
     }
 
     public boolean findWord(String str) {
+		for (String word : words) {
+			if (word.equals(str)) {
+				return true;
+			}
+		}
        return false;
     }
 
