@@ -7,6 +7,7 @@ public class DANI extends PApplet {
 
 	String[] s;
 	String[] w;
+	String[] line;
 
 
 	public void settings() {
@@ -49,26 +50,47 @@ public class DANI extends PApplet {
 		for(int i = 0 ; i < s.length ; i ++)
 		{
 			//split the string into an array of words
-			w = s[i].split(s[i], ' ');	
-		}
-
-		for(int i = 0 ; i < w.length ; i ++)
-		{
+			w = w[i].split(line[i], ' ');
+			
 			//remove punctuation characters
 			w[i] = w[i].replaceAll("[^\\w\\s]","");
-		}
 
-		for(int i = 0 ; i < w.length ; i ++)
-		{
 			//convert to lower case
 			w[i] = w[i].toLowerCase();
+
+			//print the contents of the file
+			System.out.println(s[i]);
 		}
 
-		for(int i = 0 ; i < w.length ; i ++)
-		{
-			//print the contents of the file
-			System.out.println(w[i]);
-		}
+		// for(int i = 0 ; i < w.length ; i ++)
+		// {
+		// 	//remove punctuation characters
+		// 	w[i] = w[i].replaceAll("[^\\w\\s]","");
+		// }
+
+		// for(int i = 0 ; i < w.length ; i ++)
+		// {
+		// 	//convert to lower case
+		// 	w[i] = w[i].toLowerCase();
+		// }
+
+		// for(int i = 0 ; i < w.length ; i ++)
+		// {
+		// 	//print the contents of the file
+		// 	System.out.println(w[i]);
+		// }
 		
 	}
+
+	public void findWord(str){
+
+	}
+
+	public void findFollows(str){
+
+	}
+
+
 }
+
+
